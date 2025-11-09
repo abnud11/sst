@@ -98,6 +98,14 @@ var CmdDeploy = &cli.Command{
 			},
 		},
 		{
+			Name: "refresh",
+			Type: "bool",
+			Description: cli.Description{
+				Short: "pass --refresh --run-program to pulumi",
+				Long:  "This is meant for cases where you want to update the state to be compatible with new versions of providers.",
+			},
+		},
+		{
 			Name: "dev",
 			Type: "bool",
 			Description: cli.Description{
@@ -156,6 +164,7 @@ var CmdDeploy = &cli.Command{
 			ServerPort: s.Port,
 			Verbose:    c.Bool("verbose"),
 			Continue:   c.Bool("continue"),
+			Refresh:   c.Bool("refresh"),
 		})
 		if err != nil {
 			return err

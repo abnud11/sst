@@ -317,6 +317,9 @@ func (p *Project) RunNext(ctx context.Context, input *StackInput) error {
 		args = append([]string{"refresh", "--yes"}, args...)
 	case "deploy":
 		args = append([]string{"up", "--yes", "-f"}, args...)
+		if input.Refresh {
+			args = append(args, "--refresh", "--run-program")
+		}
 	case "remove":
 		args = append([]string{"destroy", "--yes", "-f"}, args...)
 	}

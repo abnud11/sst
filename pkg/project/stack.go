@@ -21,6 +21,7 @@ type StackInput struct {
 	Verbose    bool
 	Continue   bool
 	SkipHash   string
+	Refresh	   bool
 }
 
 type ConcurrentUpdateEvent struct{}
