@@ -639,7 +639,7 @@ export class Nextjs extends SsrSite {
               bundle: path.join(outputPath, serverOrigin.bundle),
               handler: serverOrigin.handler,
               streaming: serverOrigin.streaming,
-              runtime: "nodejs22.x" as const,
+              runtime: "nodejs24.x" as const,
               environment: {
                 CACHE_BUCKET_NAME: bucketName,
                 CACHE_BUCKET_KEY_PREFIX: "_cache",
@@ -859,7 +859,7 @@ export class Nextjs extends SsrSite {
               description: `${name} ISR revalidator`,
               handler: revalidationFunction.handler,
               bundle: path.join(outputPath, revalidationFunction.bundle),
-              runtime: "nodejs22.x",
+              runtime: "nodejs24.x",
               timeout: "30 seconds",
               permissions: [
                 {
@@ -941,7 +941,7 @@ export class Nextjs extends SsrSite {
                 outputPath,
                 openNextOutput.additionalProps.initializationFunction.bundle,
               ),
-              runtime: "nodejs22.x",
+              runtime: "nodejs24.x",
               timeout: "900 seconds",
               memory: `${Math.min(
                 10240,
