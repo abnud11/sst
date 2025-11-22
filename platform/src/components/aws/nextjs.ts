@@ -465,7 +465,7 @@ export interface NextjsArgs extends SsrSiteArgs {
      * }
      * ```
      */
-    runtime?: Input<"nodejs18.x" | "nodejs20.x" | "nodejs22.x">;
+    runtime?: Input<"nodejs18.x" | "nodejs20.x" | "nodejs22.x" | "nodejs24.x">;
   };
   /**
    * Configure the Next.js app to use an existing CloudFront cache policy.
